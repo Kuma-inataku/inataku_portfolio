@@ -3,7 +3,7 @@
     <p>
       ここはページ１です。
     </p>
-    <router-link to="/page2">Go to page2</router-link>
+    <router-link to="/path2">Go to page2</router-link>
   </div>
 </template>
 
