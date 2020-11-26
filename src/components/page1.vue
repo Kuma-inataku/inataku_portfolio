@@ -4,6 +4,7 @@
       ここはページ１です。
     </p>
     <router-link to="/path2">Go to page2</router-link>
+    <router-link to="/path3">Go to page3</router-link>
   </div>
 </template>
 
