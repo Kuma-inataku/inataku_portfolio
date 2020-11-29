@@ -1,6 +1,8 @@
 <template>
   <div id="app">
+    <transition><!-- ページ遷移時のアニメーション -->
     <router-view/>
+    </transition><!-- ページ遷移時のアニメーション -->
   </div>
 </template>
 
@@ -17,7 +19,29 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+/* ここからページ遷移時のアニメーション */
+.v-enter {
+  transform: translate(-100px, 0);
+  opacity: 0;
+}
+.v-enter-to {
+  opacity: 1;
+}
+.v-enter-active {
+  transition: all 1s 0s ease;
+}
+.v-leave {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.v-leave-to {
+  transform: translate(100px, 0);
+  opacity: 0;
+}
+.v-leave-active {
+  transition: all .5s 0s ease;
 }
 /* ここからreset.css */
 /*
@@ -51,16 +75,18 @@ time, mark, audio, video {
 body {
  /* プロジェクトによって変動 */
  min-width: 1000px;
- color: #333;
+ color: #2d334a;
  line-height: 1.6;
  font-weight: 400;
  font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'YuGothic', '游ゴシック', 'メイリオ', Meiryo, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+ 
 
  width: 100%;
  font-smoothing: antialiased;
  font-variant-numeric: tabular-nums;
  /* safari hover対策 */
  -webkit-font-smoothing: antialiased;
+ background:#e3f6f5;
 }
 
 article,aside,details,figcaption,figure,
