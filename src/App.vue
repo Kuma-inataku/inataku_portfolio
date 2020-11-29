@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -174,5 +173,10 @@ button {
   color: #fff;
   margin: 5px 10px;
 }
-
+/* ここからフッター */
+footer{
+  color: #fff;
+  background:#000; 
+  text-align: center;
+}
 </style>
