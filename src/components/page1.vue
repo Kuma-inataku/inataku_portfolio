@@ -15,24 +15,22 @@
         </slide>
       </carousel>
     </div><!-- ここまでVue-carousel -->
-      <div class="t-subtitle">
-        <div class="t-subtitle-comment">
+      <div class="subtitle">
+        <div class="subtitle-comment">
           <h2>Hello, J-Rock World!</h2>
           <p>J-Rockのあらゆる「困った」を即解決！</p>
         </div>
       </div>
-      <router-link to="/page2" class="router">LIST</router-link>
-      <router-link to="/page3" class="router">DEATAIL</router-link>
-          <div class="container">
+    <div class="container">
       <div class="t-c-search">
         <h3>フリーワード検索</h3>
-        <form action="../LIST/index.html">
+        <form action="">
           <button type="submit" class="word-submit"></button>
           <input type="text" class="word-search" placeholder="キーワードを入力ください" name="freeword">
         </form>
       </div>
-      <div class="other_search">
-        <div class="main">
+      <div class="t-other_search">
+        <div class="t-main">
           <h3>カテゴリ検索</h3>
           <ul class="t-m-category">
             <li>
@@ -55,7 +53,7 @@
             </li>
           </ul>
         </div>
-        <div class="side">
+        <div class="t-side">
           <h3>「めっちゃE」ランキング検索</h3>
           <ul class="t-s-search">
             <li class="ranking_1">
@@ -72,6 +70,8 @@
         </div>
       </div>
     </div>
+    <router-link to="/page2" class="router">LIST</router-link>
+    <router-link to="/page3" class="router">DEATAIL</router-link>
   </div>
 </template>
 
@@ -79,7 +79,7 @@
 </script>
 
 <style>
-/* ここからVue-slide */
+/* ここからVue-carousel */
 .VueCarousel{
   height: 600px;
 }
@@ -97,7 +97,7 @@
   font-size: 30px; 
   border-radius: 10px;
 }
-.t-subtitle{
+.subtitle{
   position: absolute;
   top: 60%;
   left: 5%;
@@ -105,7 +105,7 @@
   height: 100px;
   background-color:rgba(255,255,255,0.7);
 }
-.t-subtitle-comment{
+.subtitle-comment{
   background-color:rgba(255,255,255,0.7);
   position: absolute;
   top: 75%;
@@ -119,40 +119,12 @@
 .t-c-search{
   border-bottom: 2px solid #ccc;
 }
-h3{
-  margin-bottom: 30px;
-}
-.word-search{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 400px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 8px 10px 8px 40px;
-  font-size: 15px;
-  background-size: 18px;
-  outline: none;
-}
-.word-submit{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 50%;
-  z-index: 1;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-
 /* ここからカテゴリ検索 */
-.other_search{
+.t-other_search{
   display: flex;
   flex-flow: row;
 }
-.main{
+.t-main{
   width: 50%;
 }
 .t-m-category{
@@ -166,7 +138,7 @@ h3{
   padding: 10px;
 }
 /* ここからランキング検索 */
-.side{
+.t-side{
   width: 50%;
   border-left: 2px solid #ccc;
 }
@@ -193,12 +165,5 @@ h3{
 }
 .ranking_3::before{
   content: "3位";
-}
-/* 遷移ボタンデザイン */
-.router{
-  background: #ffd803;
-  padding: 10px;
-  margin: 20px;
-  }
-  
+}  
 </style>
