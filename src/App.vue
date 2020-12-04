@@ -22,7 +22,7 @@ export default {
 }
 
 /* ここからページ遷移時のアニメーション */
-.v-enter {
+/* .v-enter {
   transform: translate(-100px, 0);
   opacity: 0;
 }
@@ -42,7 +42,7 @@ export default {
 }
 .v-leave-active {
   transition: all .5s 0s ease;
-}
+} */
 /* ここからreset.css */
 /*
 html5doctor.com Reset Stylesheet
@@ -201,32 +201,7 @@ button {
 }
 h3{
   margin-bottom: 30px;
-}
-.word-submit{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 50%;
-  z-index: 1;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
-.word-search{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 8px 10px 8px 40px;
-  font-size: 15px;
-  /* background: url(../images/search.jpg) 10px center no-repeat; */
-  background-color: beige;
-  background-size: 18px;
-  outline: none;
+  font-size: 25px;
 }
 
 /* 遷移ボタンデザイン */
