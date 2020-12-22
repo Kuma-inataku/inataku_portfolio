@@ -21,28 +21,6 @@ export default {
   color: #2c3e50;
 }
 
-/* ここからページ遷移時のアニメーション */
-/* .v-enter {
-  transform: translate(-100px, 0);
-  opacity: 0;
-}
-.v-enter-to {
-  opacity: 1;
-}
-.v-enter-active {
-  transition: all 1s 0s ease;
-}
-.v-leave {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-.v-leave-to {
-  transform: translate(100px, 0);
-  opacity: 0;
-}
-.v-leave-active {
-  transition: all .5s 0s ease;
-} */
 /* ここからreset.css */
 /*
 html5doctor.com Reset Stylesheet
@@ -86,7 +64,7 @@ body {
  font-variant-numeric: tabular-nums;
  /* safari hover対策 */
  -webkit-font-smoothing: antialiased;
- background:#e3f6f5;
+ background:#fffffe;
 }
 
 article,aside,details,figcaption,figure,
@@ -177,7 +155,7 @@ button {
 .t-nav-list{
   display: flex;
   justify-content: flex-end;
-  background: #000;
+  background: #094067;
   color: #ccc;
   height: 70px;
   list-style-type: none;
@@ -206,9 +184,10 @@ h3{
 
 /* 遷移ボタンデザイン */
 .router{
-  background: #ffd803;
-  padding: 10px;
-  margin: 20px;
+
+  line-height: 0;
+  /* padding: 10px; */
+  /* margin: 20px; */
   }
 /* ここからフッター */
 footer{

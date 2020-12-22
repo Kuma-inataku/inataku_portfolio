@@ -16,7 +16,7 @@
                   <a href="#">
                     <div class="l-content">
                       <div class="l-img">
-                        <!-- <img src="../images/top_image1.jpg" alt=""> -->
+                        <img src="static/images/top_image1.jpg" alt="">
                       </div>
                       <div class="l-detail">
                         <h3 class="l-title">テスト</h3>

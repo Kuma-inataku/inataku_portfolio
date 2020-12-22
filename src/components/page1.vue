@@ -2,7 +2,7 @@
   <div>
    <!-- ここからVue-carousel -->
     <div id="app">
-      <carousel class="top-carousel" autoplay="true" loop="true" speed="2000" per-page="1" autoplayTimeout="4500" >
+      <carousel class="top-carousel" autoplay="true" loop="true" speed="2000" per-page="1" autoplayTimeout="4500" :pagination-enabled="false">
         <slide>
           <img src="static/images/top_image3.jpg" alt="" width="100%" max-width="1000px" height="800px">
         </slide>
@@ -27,8 +27,11 @@
         <form action="">
           <input type="text" class="t-word-search" placeholder="キーワードを入力ください" name="freeword">
         </form>
+      <router-link to="/page2" class="router">
         <button type="submit" class="t-word-submit">検索</button>
+      </router-link>
       </div>
+      <!-- <router-link to="/page3" class="router">DEATAIL</router-link> -->
       <div class="t-other_search">
         <div class="t-main">
           <h3>カテゴリ検索</h3>
@@ -70,8 +73,6 @@
         </div>
       </div>
     </div>
-    <router-link to="/page2" class="router">LIST</router-link>
-    <router-link to="/page3" class="router">DEATAIL</router-link>
   </div>
 </template>
 
@@ -83,7 +84,6 @@ export default {
     Slide
   }
 }
-
 </script>
 
 <style>
@@ -133,10 +133,13 @@ export default {
   margin-bottom: 50px;
 }
 .t-word-submit{
-  width: 50px;
+  /* width: 50px; */
   border: 1px solid ;
-  background: #ccc;
-  margin-left: 30px;
+  padding: 10px;
+  color: #fffffe;
+  background-color: #3da9fc;
+  /* background: #ccc; */
+  /* margin-left: 30px; */
 }
 .t-word-search{
   width: 300px;
