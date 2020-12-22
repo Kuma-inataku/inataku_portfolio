@@ -1,38 +1,39 @@
 <template>
   <div>
-    <div id="app"><!-- ここからVue-carousel -->
-      <carousel class="top-carousel" autoplay="true" loop="true" speed="2000" per-page="1" autoplayTimeout="4500">
-        <!-- <slide>
-          <img src="" alt="">
+   <!-- ここからVue-carousel -->
+    <div id="app">
+      <carousel class="top-carousel" autoplay="true" loop="true" speed="2000" per-page="1" autoplayTimeout="4500" :pagination-enabled="false">
+        <slide>
+          <img src="static/images/top_image3.jpg" alt="" width="100%" max-width="1000px" height="800px">
         </slide>
         <slide>
-          <img src="" alt="">
-        </slide> -->
-        <slide v-for="n in 4">
-          <div class="slider-inner">
-              {{n}}
-          </div>
+          <img src="static/images/top_image4.jpg" alt="" width="100%" max-width="1000px" height="800px">
+        </slide>
+        <slide>
+          <img src="static/images/top_image5.jpg" alt="" width="100%" max-width="1000px" height="800px">
         </slide>
       </carousel>
-    </div><!-- ここまでVue-carousel -->
-      <div class="t-subtitle">
-        <div class="t-subtitle-comment">
+    </div>
+    <!-- ここまでVue-carousel -->
+      <div class="subtitle">
+        <div class="subtitle-comment">
           <h2>Hello, J-Rock World!</h2>
           <p>J-Rockのあらゆる「困った」を即解決！</p>
         </div>
       </div>
-      <router-link to="/page2" class="router">LIST</router-link>
-      <router-link to="/page3" class="router">DEATAIL</router-link>
-          <div class="container">
-      <div class="t-c-search">
+    <div class="container">
         <h3>フリーワード検索</h3>
-        <form action="../LIST/index.html">
-          <button type="submit" class="word-submit"></button>
-          <input type="text" class="word-search" placeholder="キーワードを入力ください" name="freeword">
+      <div class="t-c-search">
+        <form action="">
+          <input type="text" class="t-word-search" placeholder="キーワードを入力ください" name="freeword">
         </form>
+      <router-link to="/page2" class="router">
+        <button type="submit" class="t-word-submit">検索</button>
+      </router-link>
       </div>
-      <div class="other_search">
-        <div class="main">
+      <!-- <router-link to="/page3" class="router">DEATAIL</router-link> -->
+      <div class="t-other_search">
+        <div class="t-main">
           <h3>カテゴリ検索</h3>
           <ul class="t-m-category">
             <li>
@@ -55,7 +56,7 @@
             </li>
           </ul>
         </div>
-        <div class="side">
+        <div class="t-side">
           <h3>「めっちゃE」ランキング検索</h3>
           <ul class="t-s-search">
             <li class="ranking_1">
@@ -76,10 +77,17 @@
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel';
+export default {
+  components: {
+    Carousel,
+    Slide
+  }
+}
 </script>
 
 <style>
-/* ここからVue-slide */
+/* ここからVue-carousel */
 .VueCarousel{
   height: 600px;
 }
@@ -88,7 +96,7 @@
 }
 .VueCarousel-slide .slider-inner {
   height: 100%;
-  background-color: #62caaa; 
+  /* background-color: #62caaa;  */
   display: flex; 
   justify-content: center; 
   align-items: center; 
@@ -97,7 +105,7 @@
   font-size: 30px; 
   border-radius: 10px;
 }
-.t-subtitle{
+.subtitle{
   position: absolute;
   top: 60%;
   left: 5%;
@@ -105,7 +113,7 @@
   height: 100px;
   background-color:rgba(255,255,255,0.7);
 }
-.t-subtitle-comment{
+.subtitle-comment{
   background-color:rgba(255,255,255,0.7);
   position: absolute;
   top: 75%;
@@ -116,43 +124,40 @@
   height: 100px;
   text-align: center;/*一応BOX内の文字も中央寄せ*/
 }
+/* ここからフリーワード検索 */
 .t-c-search{
   border-bottom: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding-bottom:30px;
+  margin-bottom: 50px;
 }
-h3{
-  margin-bottom: 30px;
+.t-word-submit{
+  /* width: 50px; */
+  border: 1px solid ;
+  padding: 10px;
+  color: #fffffe;
+  background-color: #3da9fc;
+  /* background: #ccc; */
+  /* margin-left: 30px; */
 }
-.word-search{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 400px;
+.t-word-search{
+  width: 300px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  padding: 8px 10px 8px 40px;
+  padding: 8px 10px 8px 10px;
   font-size: 15px;
+  background-color: beige;
   background-size: 18px;
   outline: none;
 }
-.word-submit{
-  top: 50%;
-  left: 45%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 50%;
-  z-index: 1;
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-}
 
 /* ここからカテゴリ検索 */
-.other_search{
+.t-other_search{
   display: flex;
   flex-flow: row;
 }
-.main{
+.t-main{
   width: 50%;
 }
 .t-m-category{
@@ -166,15 +171,16 @@ h3{
   padding: 10px;
 }
 /* ここからランキング検索 */
-.side{
+.t-side{
   width: 50%;
   border-left: 2px solid #ccc;
 }
 .t-s-search{
   background:rgb(230, 230, 230, 0.8);
   margin-left: 10px;
-  padding-top: 10px;
+  padding: 10px 10px 0;
   display: inline-block;
+  text-align: left;
 }
 .t-s-search li{
   margin-bottom: 10px;
@@ -193,12 +199,5 @@ h3{
 }
 .ranking_3::before{
   content: "3位";
-}
-/* 遷移ボタンデザイン */
-.router{
-  background: #ffd803;
-  padding: 10px;
-  margin: 20px;
-  }
-  
+}  
 </style>
