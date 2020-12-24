@@ -25,7 +25,7 @@
         <h3>フリーワード検索</h3>
       <div class="t-c-search">
         <form action="">
-          <input type="text" class="t-word-search" placeholder="キーワードを入力ください" name="freeword">
+          <input type="text" class="t-word-search" placeholder="" name="freeword">
         </form>
       <router-link to="/page2" class="router">
         <button type="submit" class="t-word-submit">検索</button>
